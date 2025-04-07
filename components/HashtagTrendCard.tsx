@@ -97,7 +97,7 @@ const HashtagTrendCard = React.memo(({
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(shareText)}`;
         break;
       case 'github':
-        shareUrl = 'https://github.com/yourusername/sentiment-analyzer';
+        shareUrl = 'https://github.com/Dollypee/uri-hashtag-insight';
         break;
     }
     

@@ -17,11 +17,12 @@ This project implements a dynamic page for viewing sentiment trends of specific 
 
 ## 🖼️ Screenshots
 
-![Hashtag Sentiment Dashboard](https://paste.pics/a333340eb219994d30ef29ed201a0683)
-![Insights Dark Mode](https://paste.pics/726c20bd2dac226ab6267e514bf80277)
-![Insights Dark Mode](https://paste.pics/646dfb050cb6db87c0b020d250b4ca75)
-![Insights Dark Mode Bar Chart](https://paste.pics/24c7d8d8d474bac9ab0bbe67d099def5)
-![Insights Light Mode](https://paste.pics/5543d8cf91f0071b1cf091eb62613439)
+![Hashtag Sentiment Dashboard](https://i.ibb.co/Z6cVYF6V/Screenshot-2025-04-07-061509.png)
+![Insights Dark Mode](https://i.ibb.co/6cbjLCJh/Screenshot-2025-04-07-060315.png)
+![Insights Dark Mode](https://i.ibb.co/BVYJVx8S/Screenshot-2025-04-07-060342.png)
+![Insights Dark Mode Bar Chart](https://i.ibb.co/FkbkL7Xb/Screenshot-2025-04-07-061847.png)
+![Insights Light Mode](https://i.ibb.co/PZp08DJ7/Screenshot-2025-04-07-060406.png)
+![Mobile Dark Mode](https://i.ibb.co/kg9FKC8D/Screenshot-2025-04-07-063541.png)
 
 ## 🏗️ Project Structure
 
