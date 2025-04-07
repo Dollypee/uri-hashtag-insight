@@ -1,40 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Hashtag Sentiment Insight Page
 
-## Getting Started
+A Next.js application that displays sentiment analysis for social media hashtags through interactive charts.
 
-First, run the development server:
+## 📋 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project implements a dynamic page for viewing sentiment trends of specific hashtags over time. Users can access detailed sentiment insights by navigating to `/insights/[hashtag]`, where data is fetched from a mock backend API and displayed in an interactive chart.
+
+## ✨ Features
+
+- **Dynamic routing** for individual hashtag analysis
+- **Interactive line charts** displaying sentiment trends over time
+- **Responsive design** for optimal viewing on mobile and desktop
+- **Performance optimizations** using React.memo, useMemo, and useCallback
+- **Loading and error states** for improved user experience
+- **Visual indicators** showing trend direction
+
+## 🖼️ Screenshots
+
+![Hashtag Sentiment Dashboard](https://paste.pics/a333340eb219994d30ef29ed201a0683)
+![Insights Dark Mode](https://paste.pics/726c20bd2dac226ab6267e514bf80277)
+![Insights Dark Mode](https://paste.pics/646dfb050cb6db87c0b020d250b4ca75)
+![Insights Dark Mode Bar Chart](https://paste.pics/24c7d8d8d474bac9ab0bbe67d099def5)
+![Insights Light Mode](https://paste.pics/5543d8cf91f0071b1cf091eb62613439)
+
+## 🏗️ Project Structure
+
+```
+/pages
+  /insights/[hashtag].tsx  # Dynamic route for hashtag insights
+  /api/trends/[hashtag].ts # API endpoint for hashtag data
+/components
+  HashtagTrendCard.tsx     # Card container for hashtag info
+  SentimentChart.tsx       # Line chart visualization component
+/hooks
+  useHashtagTrend.ts       # Custom hook for data fetching
+/mocks
+  trendData.ts             # Mock data for development
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technical Implementation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Tech Stack
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Next.js** - React framework for server-rendered applications
+- **TypeScript** - Static typing for improved development experience
+- **@mui/x-charts** - For interactive data visualization
+- **SWR** - For data fetching, caching, and state management
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Key Components
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **HashtagTrendCard**
+   - Container component for displaying hashtag information
+   - Shows title, date range, and trend direction indicator
+   - Handles responsive layout adjustments
 
-## Learn More
+2. **SentimentChart**
+   - Implements the interactive line chart using @mui/x-charts
+   - Memoized rendering for performance optimization
+   - Handles different data states (loading, error, success)
 
-To learn more about Next.js, take a look at the following resources:
+3. **useHashtagTrend Hook**
+   - Custom hook for fetching and managing hashtag trend data
+   - Implements SWR for data fetching with caching
+   - Provides loading, error, and data states
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### Performance Optimizations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **React.memo** on components to prevent unnecessary re-renders
+- **useMemo** for expensive calculations and derived data
+- **useCallback** for stable function references
+- **Next.js dynamic imports** for code splitting
+- **SWR caching** for efficient data fetching
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Dollypee/uri-hashtag-insight.git
+   cd uri-hashtag-insight
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000/insights/uri](http://localhost:3000/insights/uri) in your browser
+
+### API Endpoints
+
+The application uses the following API endpoint:
+
+- `GET /api/trends/[hashtag]` - Returns sentiment data for a specific hashtag
+
+Example response:
+```json
+{
+  "hashtag": "#uri",
+  "range": "Apr 1 - Apr 7, 2025",
+  "trend": [
+    { "date": "2025-04-01", "sentiment": -0.2 },
+    { "date": "2025-04-02", "sentiment": 0.0 },
+    { "date": "2025-04-03", "sentiment": 0.1 },
+    { "date": "2025-04-04", "sentiment": 0.3 },
+    { "date": "2025-04-05", "sentiment": 0.2 },
+    { "date": "2025-04-06", "sentiment": 0.4 },
+    { "date": "2025-04-07", "sentiment": 0.5 }
+  ]
+}
+```
+
+## 🔍 Development Approach
+
+I approached this project with a focus on component reusability, performance optimization, and user experience. Here's how I tackled the key requirements:
+
+1. **Dynamic Routing**
+   - Implemented Next.js dynamic routes with the `[hashtag]` parameter
+   - Created a clean URL structure for easy access to different hashtags
+
+2. **Data Fetching**
+   - Used SWR for efficient data fetching with built-in caching
+   - Created a custom hook to encapsulate fetching logic
+   - Implemented loading and error states for a smooth user experience
+
+3. **Chart Visualization**
+   - Used @mui/x-charts LineChart for interactive data visualization
+   - Applied custom styling to match the application theme
+   - Implemented responsive design for mobile compatibility
+
+4. **Performance**
+   - Applied memoization techniques to prevent unnecessary renders
+   - Optimized component trees to minimize re-renders
+   - Used code splitting where appropriate
+
+## ⚠️ Challenges and Solutions
+
+1. **Challenge**: Ensuring responsive chart rendering on various screen sizes
+   **Solution**: Implemented dynamic width calculations and breakpoint-based adjustments using CSS media queries and ResizeObserver
+
+2. **Challenge**: Preventing unnecessary re-renders in the chart component
+   **Solution**: Used React.memo and carefully structured component hierarchy to minimize render cycles
+
+3. **Challenge**: Handling loading and error states gracefully
+   **Solution**: Created dedicated UI components for loading and error states with appropriate feedback and retry mechanisms
+
+
+## ⏱️ Time Spent
+
+Total development time: Approximately 2 hours
+
+- Planning and setup: 20 minutes
+- Component implementation: 30 minutes
+- Styling and responsiveness: 15 minutes
+- Testing and refinement: 55 minutes
+
