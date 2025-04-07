@@ -6,6 +6,8 @@ A Next.js application that displays sentiment analysis for social media hashtags
 
 This project implements a dynamic page for viewing sentiment trends of specific hashtags over time. Users can access detailed sentiment insights by navigating to `/insights/[hashtag]`, where data is fetched from a mock backend API and displayed in an interactive chart.
 
+- **Link to deployed site**: (https://uri-hashtag-insights-mu.vercel.app/)
+
 ## ✨ Features
 
 - **Dynamic routing** for individual hashtag analysis
@@ -46,7 +48,7 @@ This project implements a dynamic page for viewing sentiment trends of specific 
 - **Next.js** - React framework for server-rendered applications
 - **TypeScript** - Static typing for improved development experience
 - **@mui/x-charts** - For interactive data visualization
-- **SWR** - For data fetching, caching, and state management
+- **React Query** - For data fetching, caching, and state management
 
 ### Key Components
 
@@ -62,7 +64,7 @@ This project implements a dynamic page for viewing sentiment trends of specific 
 
 3. **useHashtagTrend Hook**
    - Custom hook for fetching and managing hashtag trend data
-   - Implements SWR for data fetching with caching
+   - Implements React Query for data fetching with caching
    - Provides loading, error, and data states
 
 ### Performance Optimizations
@@ -71,7 +73,7 @@ This project implements a dynamic page for viewing sentiment trends of specific 
 - **useMemo** for expensive calculations and derived data
 - **useCallback** for stable function references
 - **Next.js dynamic imports** for code splitting
-- **SWR caching** for efficient data fetching
+- **React Query caching** for efficient data fetching
 
 ## 🚀 Getting Started
 
@@ -136,7 +138,7 @@ I approached this project with a focus on component reusability, performance opt
    - Created a clean URL structure for easy access to different hashtags
 
 2. **Data Fetching**
-   - Used SWR for efficient data fetching with built-in caching
+   - Used React Query for efficient data fetching with built-in caching
    - Created a custom hook to encapsulate fetching logic
    - Implemented loading and error states for a smooth user experience
 
@@ -156,7 +158,7 @@ I approached this project with a focus on component reusability, performance opt
    **Solution**: Implemented dynamic width calculations and breakpoint-based adjustments using CSS media queries and ResizeObserver
 
 2. **Challenge**: Preventing unnecessary re-renders in the chart component
-   **Solution**: Used React.memo and carefully structured component hierarchy to minimize render cycles
+   **Solution**: Used React memo and carefully structured component hierarchy to minimize render cycles
 
 3. **Challenge**: Handling loading and error states gracefully
    **Solution**: Created dedicated UI components for loading and error states with appropriate feedback and retry mechanisms

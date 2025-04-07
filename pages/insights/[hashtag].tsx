@@ -143,7 +143,7 @@ const HashtagInsightPage = () => {
           pb: 6 
         }}
       >
-        <Container maxWidth="lg">
+        {/* <Container maxWidth="lg"> */}
           {/* Header with navigation */}
           {/* <Box 
             sx={{ 
@@ -304,7 +304,7 @@ const HashtagInsightPage = () => {
             trend={sentimentTrend}
             data={data?.trend}
           />
-        </Container>
+        {/* </Container> */}
       </Box>
     </DashboardLayout>
   );
